@@ -1,0 +1,93 @@
+
+function submitForm() {
+    // var name_of_restauant = $.trim();
+    var streetaddress = $.trim($("#streetaddress").val());
+    var city = $.trim($("#city").val());
+    var state = $.trim($("#state").val());
+    var pin_code = $.trim($("#pin_code").val());
+    var email = $.trim($("#email").val());
+    var mobile = $.trim($("#mobile").val());
+    var manager_name = $.trim($("#manager_name").val());
+    var description = $.trim($("#description").val());
+
+
+     if(name_of_restauant == "")
+      { 
+        document.getElementById('name_of_restauant').style.borderColor = '#ff0000';
+        document.getElementById("titname_of_restauantle").focus();
+        $("#name_of_restauant").val( "" );
+        $("#name_of_restauant").addClass( "error" );
+        return false;
+      }
+      if(streetaddress == "")
+      {
+            
+        document.getElementById('streetaddress').style.borderColor = '#ff0000';
+        document.getElementById("streetaddress").focus();
+        $("#streetaddress").val( "" );
+        $("#streetaddress").addClass( "error" );
+        return false;
+      }
+      if(city == "")
+      {
+            
+        document.getElementById('city').style.borderColor = '#ff0000';
+        document.getElementById("city").focus();
+        $("#city").val( "" );
+        $("#city").addClass( "error" );
+        return false;
+      }
+      if(state == "")
+      {
+            
+        document.getElementById('state').style.borderColor = '#ff0000';
+        document.getElementById("state").focus();
+        $("#state").val( "" );
+        $("#state").addClass( "error" );
+        return false;
+      }
+      if(pin_code == "")
+      {   
+        document.getElementById('pin_code').style.borderColor = '#ff0000';
+        document.getElementById("pin_code").focus();
+        $("#pin_code").val( "" );
+        $("#pin_code").addClass( "error" );
+        return false;
+      }
+      if(email == "")
+      {   
+        document.getElementById('email').style.borderColor = '#ff0000';
+        document.getElementById("email").focus();
+        $("#email").val( "" );
+        $("#email").addClass( "error" );
+        return false;
+      }
+       if(mobile == "")
+      {   
+        document.getElementById('mobile').style.borderColor = '#ff0000';
+        document.getElementById("mobile").focus();
+        $("#mobile").val( "" );
+        $("#mobile").addClass( "error" );
+        return false;
+      }
+      if(manager_name == "")
+      {   
+        document.getElementById('manager_name').style.borderColor = '#ff0000';
+        document.getElementById("manager_name").focus();
+        $("#manager_name").val( "" );
+        $("#manager_name").addClass( "error" );
+        return false;
+      }
+      if(description == "")
+      {   
+        document.getElementById('description').style.borderColor = '#ff0000';
+        document.getElementById("description").focus();
+        $("#description").val( "" );
+        $("#description").addClass( "error" );
+        return false;
+      }
+
+ document.getElementById('error-alert').style.color = '#1cdd5c';
+  $("#error-alert").text( "Loading..." );
+  $("#signup-form").submit();
+ }   
