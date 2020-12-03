@@ -1,0 +1,43 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function open_modal(id,nresame,unit,cuisines,service_styles){
+  // console.log(JSON.parse(cuisines));
+  // console.log(JSON.parse(service_styles));
+  $.each(JSON.parse(service_styles), function(index,data){
+    // console.log(data.service_id);
+    $("#service_"+data.service_id+"_id").attr('checked','checked');
+  });
+  $.each(JSON.parse(cuisines), function(index,data){
+    // console.log(data.service_id);
+    $("#cuisine_"+data.cuisine_id+"_id").attr('checked','checked');
+  });
+  var name1 = nresame.toLowerCase();
+  var name = name1.replace(/ +/g, "");
+  $("#name_of_restauant").val(name);
+  $("#custom_logo").html(name);
+  var unit= JSON.parse(unit);
+  $("#streetaddress").val(unit.user_street_address);
+  $("#city").val(unit.user_city);
+  $("#state").val(unit.user_state);
+  $("#pin_code").val(unit.user_zipcode);
+  $("#email").val(unit.user_email);
+  $("#mobile").val(unit.user_phone);
+  $("#manager_name").val(unit.user_fullname);
+  $("#description").val(unit.user_restaurant_desc); 
+  var url = '{{ env("APP_DOMAIN") }}';
+  var logo = 'http://test.fboh365.com/public/upload/users/optional/'+unit.user_attach_logo;
+  if(unit.user_attach_logo!=''){
+  $('.profile-logo').attr('src',logo);
+  }
+  var resimg = 'http://test.fboh365.com/public/upload/users/optional/'+unit.user_attach_restaurant;
+  if(unit.user_attach_restaurant!=''){
+  $('.res-image').attr('src',resimg);
+  }
+  
+  $("#subdomain").attr('value','http://'+name+'.'+url+'/careers');
+  
+  $("#open_modal").modal('show');
+  $("#unique_id").attr('value',id);
+  
+}
+</script>
